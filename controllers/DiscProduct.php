@@ -1,14 +1,14 @@
 <?php
 
-namespace ProductController;
+namespace Products\ProductController;
 
 class DiscProduct extends MainProduct
 {
     public $size;    // in MB
 
-    public function __construct($sku, $product_type, $name, $price, $size)
+    public function __construct($sku, $name, $price, $size)
     {
-        parent::__construct($sku, $product_type, $name, $price);
+        parent::__construct($sku, $name, $price);
         $this->size = $size;
     }
 
@@ -17,9 +17,8 @@ class DiscProduct extends MainProduct
         return $this->size;
     }
 
-    public function setSize($size)
-    {
-        $this->size = $size;
+    public function getProductType(){
+        return "disc";
     }
 
     public function getDetails()

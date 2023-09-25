@@ -1,14 +1,14 @@
 <?php
 
-namespace ProductController;
+namespace Products\ProductController;
 
 class BookProduct extends MainProduct
 {
     public $weight;  //  in KG
 
-    public function __construct($sku, $product_type, $name, $price, $weight)
+    public function __construct($sku, $name, $price, $weight)
     {
-        parent::__construct($sku, $product_type, $name, $price);
+        parent::__construct($sku, $name, $price);
         $this->weight = $weight;
     }
 
@@ -17,9 +17,8 @@ class BookProduct extends MainProduct
         return $this->weight;
     }
 
-    public function setWeight($weight)
-    {
-        $this->weight = $weight;
+    public function getProductType(){
+        return "book";
     }
 
     public function getDetails()

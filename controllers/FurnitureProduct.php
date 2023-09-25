@@ -1,14 +1,14 @@
 <?php
 
-namespace ProductController;
+namespace Products\ProductController;
 
 class FurnitureProduct extends MainProduct
 {
     public $dimension;   // in (HxWxL)
 
-    public function __construct($sku, $product_type, $name, $price, $dimension)
+    public function __construct($sku, $name, $price, $dimension)
     {
-        parent::__construct($sku, $product_type, $name, $price);
+        parent::__construct($sku, $name, $price);
         $this->dimension = $dimension;
     }
 
@@ -22,8 +22,15 @@ class FurnitureProduct extends MainProduct
         $this->dimension = $dimension;
     }
 
+    public function getProductType()
+    {
+        return "furniture";
+    }
+
     public function getDetails()
     {
         return "FurnitureProduct : Name - " . $this->getName() . ", Price - " . $this->getPrice() . ", Dimension - " . $this->getDimension();
     }
+
+  
 }

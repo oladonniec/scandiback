@@ -1,0 +1,9 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Configurations\\DBConfig\\": "config/",
+      "Validator\\Validate\\": "validator/",
+      "Products\\ProductController\\": "controllers/"
+    }
+  }
+}
